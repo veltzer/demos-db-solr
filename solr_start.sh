@@ -11,6 +11,7 @@
 # ulimit -n 65536
 # ulimit -u 65536
 # this doesn't work because we are raising limits here and not lowering them
+export SOLR_ULIMIT_CHECKS=false
 
 cd ~/install/solr
 bin/solr start -e cloud -noprompt
