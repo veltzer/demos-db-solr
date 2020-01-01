@@ -1,0 +1,11 @@
+Second exercise
+===============
+- Create a films.csv file with information about a few films.
+- Import the file via the command line into the "films"
+	collection.
+	(find out how on your own).
+- Execute a query from the command line and see the data that
+	you imported in the previous stage.
+
+Bonus:
+- Do the same with XML.
