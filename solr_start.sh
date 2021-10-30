@@ -1,17 +1,19 @@
-#!/bin/sh
-# this will start solr with no prompt and will automatically
-# create the 'gettingstarted' collection
+#!/bin/bash -e
 
-# these raising of limits with ulimit will remove the warnings
-# you get when starting solr
-# in /bin/sh
-# ulimit -n 65536
-# ulimit -p 65536
-# in /bin/bash
-# ulimit -n 65536
-# ulimit -u 65536
-# this doesn't work because we are raising limits here and not lowering them
-export SOLR_ULIMIT_CHECKS=false
+# lets check that docker is running
+if ! systemctl is-active --quiet "docker.service"
+then
+	echo "starting docker..."
+	sudo systemctl start docker.service
+fi
 
-cd ~/install/solr
-bin/solr start -e cloud -noprompt
+# enable only when you want to run from clean state.
+docker\
+	run\
+	--detach=true\
+	--name=solr\
+	--network host\
+	solr:latest
+
+echo "Solar is running"
+echo "see it at [http://localhost:8983]"

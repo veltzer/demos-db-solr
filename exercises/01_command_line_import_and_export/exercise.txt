@@ -1,5 +1,3 @@
-Second exercise
-===============
 - Create a films.csv file with information about a few films.
 - Import the file via the command line into the "films"
 	collection.
