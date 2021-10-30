@@ -1,16 +1,19 @@
 #!/bin/bash -e
 
-# lets check that docker is running
-if ! systemctl is-active --quiet "docker.service"
-then
-	echo "starting docker..."
-	sudo systemctl start docker.service
-fi
+name="solr"
 
-# enable only when you want to run from clean state.
-docker\
-	run\
-	--detach=true\
-	--name=solr\
-	--network host\
-	solr:latest
+if systemctl is-active --quiet "docker.service"
+then
+	if [[ $(docker ps --filter "name=^/$name$" --format '{{.Names}}') == "$name" ]]
+	then
+		echo "stopping [$name] container..."
+		docker stop solr > /dev/null
+		docker rm solr > /dev/null
+	fi
+	echo "stoping docker..."
+	sudo systemctl stop docker.socket
+	sudo systemctl stop docker.service
+	sudo systemctl stop containerd.service
+else
+	echo "docker is not running..."
+fi

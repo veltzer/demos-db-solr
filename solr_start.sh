@@ -1,19 +1,24 @@
 #!/bin/bash -e
 
-# lets check that docker is running
+name="solr"
+
 if ! systemctl is-active --quiet "docker.service"
 then
 	echo "starting docker..."
+	sudo systemctl start docker.socket
 	sudo systemctl start docker.service
+	sudo systemctl start containerd.service
 fi
 
-# enable only when you want to run from clean state.
-docker\
+echo "starting [$name] container..."
+SOLR_CONTAINER_ID=$(
+	docker\
 	run\
 	--detach=true\
-	--name=solr\
+	--name=$name\
 	--network host\
-	solr:latest
+	solr:latest\
+)
 
-echo "Solar is running"
+echo "solr is running as container [$SOLR_CONTAINER_ID]"
 echo "see it at [http://localhost:8983]"
