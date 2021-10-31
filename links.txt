@@ -1,3 +1,4 @@
 http://lucidworks.com/post/faceted-search-with-solr/
 https://solr.apache.org/downloads.html
 https://solr.apache.org/guide/8_0/installing-solr.html
+https://doc.lucidworks.com/fusion/5.1/199/solr-query-language-cheat-sheet
