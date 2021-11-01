@@ -2,12 +2,21 @@ The purpose of this exercise is to understand the difference between
 type "string" to type "text_*"
 
 - check that the field 'name' is of type 'string'
+	and that you have the data int
 
-- query on part of the name
+- query on part of the name, e.g.:
 	name:Rings
 
-- now change the name to "text_en"
+- now change the 'name' fields type to "text_en"
 	This type of change requies reindexing so delete all documents and reimport.
+	Make sure the field is indexed.
+
+- Now issue the partial query again.
+	name:Rings
+
+- What did we learn?
+
+- now change the field 'name' to be non-indexed.
 
 - Now issue the partial query again.
 	name:Rings
