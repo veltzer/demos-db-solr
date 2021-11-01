@@ -1,0 +1,21 @@
+first read the following:
+======================================
+Core
+
+In Solr, a core is composed of a set of configuration files, Lucene index files, and Solr’s transaction log.
+
+a Solr core is a uniquely named, managed, and configured index running in a Solr server; a Solr server can host one or more cores. A core is typically used to separate documents that have different schemas
+
+collection
+
+Solr also uses the term collection, which only has meaning in the context of a Solr cluster in which a single index is distributed across multiple servers.
+
+SolrCloud introduces the concept of a collection, which extends the concept of a uniquely named, managed, and configured index to one that is split into shards and distributed across multiple servers.
+======================================
+
+- when solr is running create a new core of your choosing:
+	$ bin/solr create_core -c my_core
+- to to the admin console and see your new core under "Core Admin"
+- locate and browser the folders that were created with the "create_core" command
+	under your solr installation:
+	"$SOLR_ROOT/server/solr/my_core"
