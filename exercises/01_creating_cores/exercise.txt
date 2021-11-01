@@ -28,3 +28,4 @@ SolrCloud introduces the concept of a collection, which extends the concept of a
 
 References:
 - https://stackoverflow.com/questions/29070505/how-to-create-new-core-in-solr-5
+- https://stackoverflow.com/questions/17044640/solr-collection-vs-cores
