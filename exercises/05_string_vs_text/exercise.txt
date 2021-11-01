@@ -1,0 +1,18 @@
+The purpose of this exercise is to understand the difference between
+type "string" to type "text_*"
+
+- check that the field 'name' is of type 'string'
+
+- query on part of the name
+	name:Rings
+
+- now change the name to "text_en"
+	This type of change requies reindexing so delete all documents and reimport.
+
+- Now issue the partial query again.
+	name:Rings
+
+- What did we learn?
+
+References:
+- https://solr.apache.org/guide/8_0/reindexing.html
