@@ -19,3 +19,9 @@ SolrCloud introduces the concept of a collection, which extends the concept of a
 - locate and browser the folders that were created with the "create_core" command
 	under your solr installation:
 	"$SOLR_ROOT/server/solr/my_core"
+- create another core called "my_core2" via the solr admin console.
+	First create a folder for you second core and its data:
+	$ mkdir "$SOLR_ROOT/server/solr/my_core2" "$SOLR_ROOT/server/solr/my_core2/data"
+	You will have to copy the "conf" subfolder of the first core you create to the second core folder
+	$ cp -r "$SOLR_ROOT/server/solr/my_core/conf" "$SOLR_ROOT/server/solr/my_core2/conf"
+	Use the "Add Core" button from the console to add the new core
