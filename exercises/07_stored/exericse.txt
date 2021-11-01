@@ -1,0 +1,1 @@
+The purpose of this exercise is to understand the "stored" property of fields.
