@@ -1,0 +1,3 @@
+This is a discussion exercise about various field types that solr supports.
+
+Open up: https://solr.apache.org/guide/8_10/field-types-included-with-solr.html
