@@ -25,3 +25,6 @@ SolrCloud introduces the concept of a collection, which extends the concept of a
 	You will have to copy the "conf" subfolder of the first core you create to the second core folder
 	$ cp -r "$SOLR_ROOT/server/solr/my_core/conf" "$SOLR_ROOT/server/solr/my_core2/conf"
 	Use the "Add Core" button from the console to add the new core
+
+References:
+- https://stackoverflow.com/questions/29070505/how-to-create-new-core-in-solr-5
