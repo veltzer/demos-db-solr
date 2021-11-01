@@ -1,0 +1,19 @@
+The idea of this exercise is to manipulate the schmea from the command line.
+
+- see you schema via:
+	$ curl "http://localhost:8983/solr/my_core/schema"
+	and
+	$ curl "http://localhost:8983/solr/my_core/schema/fields"
+
+- add a fields:
+	$ curl -X POST -H 'Content-type:application/json' --data-binary '{"add-field":{"name":"anotherfield","type":"text_en","stored":true,"indexed":true }}' http://localhost:8983/solr/my_core/schema
+
+- check that the field was really added:
+	$ curl "http://localhost:8983/solr/my_core/schema/fields"
+
+- delete the field:
+	$ curl -X POST -H 'Content-type:application/json' --data-binary '{"delete-field" : { "name":"anotherfield" }}' http://localhost:8983/solr/my_core/schema
+
+
+References
+- http://www.codecognition.org/2015/08/add-and-remove-fields-from-solr-schema.html
