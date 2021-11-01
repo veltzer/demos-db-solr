@@ -23,5 +23,9 @@ These instructions are for ubuntu systems, other system may need adjustments...
 	$ sudo systemctl stop docker.service
 	$ sudo systemctl stop containerd.service
 
-via a binary package:
-TBD
+Via a binary package:
+These instructions are for a linux system, windows systems may need some adjustments
+from https://solr.apache.org/guide/8_0/installing-solr.html
+- download the right package from https://solr.apache.org/downloads.html
+- unpack the package to a folder of your choosing:
+	$ tar xvf
