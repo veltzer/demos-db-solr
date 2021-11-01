@@ -1,0 +1,23 @@
+Use a core you have and define a schema via the console
+
+- Use the core that you have and the "Schema" section of the console to define the
+following schema:
+	id: str (this is actually built-in).
+		You don't have to add this.
+	You only have to add these three fields:
+	name: string
+	year: pint
+	description: string
+	* accept all defaults when creating the fields
+- see the properties of your fields from the "Schema" panel by selecting each field.
+- add one movie manually to the collection using the "Documents" panel.
+	Here is the data:
+==============================
+name,year,description
+The Lord of the Rings: The Fellowship of the Ring,2001,Best movie ever
+==============================
+	Make sure you get success for your import.
+- query the collection via the console using the "Query" panel.
+	See that your data is in.
+	See that your fields got the right values.
+	Who added the id? We didn't.
