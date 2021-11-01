@@ -29,3 +29,11 @@ The Lord of the Rings: The Fellowship of the Ring,2001,Best movie ever
 		<delete><query>*:*</query></delete>
 	and submit
 - see that your document was really deleted from the "Query" panel.
+
+Notes:
+You could delete with JSON format by selecting "JSON" as the document type and the following
+content:
+	{'delete': {'query': '*:*'}}
+
+References:
+- https://stackoverflow.com/questions/23228727/deleting-solr-documents-from-solr-admin/48007194#48007194
