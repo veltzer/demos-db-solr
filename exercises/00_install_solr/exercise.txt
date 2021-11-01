@@ -1,0 +1,27 @@
+Install solr in several ways:
+
+Via docker
+These instructions are for ubuntu systems, other system may need adjustments...
+- run docker on your system
+	$ sudo systemctl start docker.socket
+	$ sudo systemctl start docker.service
+	$ sudo systemctl start containerd.service
+- run a container with the latest version of solr and connect it to your network:
+	$ docker run --detach=true --name=solr --network host solr:latest
+	This will pull the latest version of solr from 'https://hub.docker.com'
+	and will run a container with that latest version.
+	It will also connect the network of the new container
+- see your container running via:
+	$ docker container ls
+- browse your solr via:
+	http://localhost:8983
+- turn off the container with:
+	$ docker stop solr
+	$ docker rm solr
+- stop docker with:
+	$ sudo systemctl stop docker.socket
+	$ sudo systemctl stop docker.service
+	$ sudo systemctl stop containerd.service
+
+via a binary package:
+TBD
