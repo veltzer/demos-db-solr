@@ -21,3 +21,11 @@ The Lord of the Rings: The Fellowship of the Ring,2001,Best movie ever
 	See that your data is in.
 	See that your fields got the right values.
 	Who added the id? We didn't.
+- now delete your document from the console
+	Go to "Documents"
+	select "/update" as handler
+	select "XML" as document type.
+	type in the following document:
+		<delete><query>*:*</query></delete>
+	and submit
+- see that your document was really deleted from the "Query" panel.
