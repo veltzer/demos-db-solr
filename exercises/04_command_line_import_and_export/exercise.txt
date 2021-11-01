@@ -12,7 +12,9 @@
 	Find out on your own how to do that (don't peek at the solution).
 
 Repeat the same with XML format instead of CSV.
+You will have to create a films.xml version of the films.csv file
+and import it as XML.
 
 References:
 - https://stackoverflow.com/questions/23228727/deleting-solr-documents-from-solr-admin
-- https://solr.apache.org/guide/7_1/uploading-data-with-index-handlers.html#nested-child-documents
+- https://solr.apache.org/guide/7_1/uploading-data-with-index-handlers.html
