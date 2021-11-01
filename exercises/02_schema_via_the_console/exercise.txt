@@ -16,6 +16,8 @@ following schema:
 name,year,description
 The Lord of the Rings: The Fellowship of the Ring,2001,Best movie ever
 ==============================
+	Be sure to select "CSV" as the data type.
+	and press submit
 	Make sure you get success for your import.
 - query the collection via the console using the "Query" panel.
 	See that your data is in.
