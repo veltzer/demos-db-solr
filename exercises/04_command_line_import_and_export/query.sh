@@ -1,1 +1,2 @@
-curl "http://localhost:8983/solr/films/select?indent=on&q=*:*"
+#!/bin/bash
+curl "http://localhost:8983/solr/my_core/select?q=*:*"

@@ -1,9 +1,14 @@
-- Create a films.csv file with information about a few films.
-- Import the file via the command line into the "films"
+- Use the "films.csv" file with information about a few films.
+- Import the file via the command line into the "my_core"
 	collection.
-	(find out how on your own).
+	Use "curl" to do it.
+	Find out on your own how to do that (don't peek at the solution).
 - Execute a query from the command line and see the data that
 	you imported in the previous stage.
+	Use "curl" to do it.
+	Find out on your own how to do that (don't peek at the solution).
+- Delete all documents from your core.
+	Use "curl" to do it.
+	Find out on your own how to do that (don't peek at the solution).
 
-Bonus:
-- Do the same with XML.
+Repeat the same with XML format instead of CSV.
