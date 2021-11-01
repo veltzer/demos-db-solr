@@ -15,3 +15,4 @@ Repeat the same with XML format instead of CSV.
 
 References:
 - https://stackoverflow.com/questions/23228727/deleting-solr-documents-from-solr-admin
+- https://solr.apache.org/guide/7_1/uploading-data-with-index-handlers.html#nested-child-documents
