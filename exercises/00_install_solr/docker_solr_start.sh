@@ -10,6 +10,13 @@ then
 	sudo systemctl start containerd.service
 fi
 
+# stop a previous container, if it exists
+if [[ $(docker ps --filter "name=^/$name$" --format '{{.Names}}') == "$name" ]]
+then
+	echo "stopping [$name] container..."
+	docker stop solr > /dev/null
+	docker rm solr > /dev/null
+fi
 echo "starting [$name] container..."
 SOLR_CONTAINER_ID=$(
 	docker\
