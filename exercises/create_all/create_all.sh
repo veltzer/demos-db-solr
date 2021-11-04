@@ -1,8 +1,8 @@
 #!/bin/bash
 
 CORE_NAME="my_core"
-SOLR_HOME="/home/mark/git/demos-solr/exercises/00_install_solr/solr-8.10.1"
-# SOLR_HOME="~/install/solr"
+#SOLR_HOME="/home/mark/git/demos-solr/exercises/00_install_solr/solr-8.10.1"
+SOLR_HOME="$HOME/install/solr"
 # remove the corrent core
 $SOLR_HOME/bin/solr delete -c "$CORE_NAME"
 # create the core
