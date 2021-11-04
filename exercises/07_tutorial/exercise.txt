@@ -1,0 +1,2 @@
+Run through all 4 exercises in the solr tutorial at url:
+https://solr.apache.org/guide/8_10/solr-tutorial.html
