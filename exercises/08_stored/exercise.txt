@@ -1,1 +1,18 @@
 The purpose of this exercise is to understand the "stored" property of fields.
+
+On a clean core (remove existing data if you need to) create the following schema:
+	name: text_en (indexed, stored, uninvertible)
+	year: pint (indexed, stored, uninvertible)
+	description: text_en (indexed, stored, uninvertible)
+
+The data in the attached "films.csv" file.
+
+Query all the data and also query with "name:Rings"
+See that everything is ok
+
+Now remove the name field and re-create it without the "stored" value.
+
+Query all the data and also query with "name:Rings"
+What is missing from the results?
+
+What does it mean?
