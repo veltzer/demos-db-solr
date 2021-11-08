@@ -1,0 +1,39 @@
+In this exercise we will create config set and a core/collection using it.
+
+First make sure that Solr is running in cloud mode. In cloud mode you can query zookeeper properties
+like this:
+
+$ curl "http://localhost:8983/solr/zookeeper?detail=true&path=%2Fclusterstate.json"
+
+So if this query fails you are not in cloud mode.
+
+To run solr in cloud mode use:
+
+$ $SOLR_HOME/bin/solr start -cloud
+
+First lets create a core from the command line:
+
+$ $SOLR_HOME/bin/solr create_core -c foo
+
+Did you see the warning? This is because you are using the _default configuration for the core that comes
+with the solr distribution.
+
+That configuration is really located at:
+	$SOLR_HOME/server/solr/configsets/_default
+
+Take a moment to explore this config
+
+Delete the core you created with:
+
+$ $SOLR_HOME/bin/solr delete -c foo
+
+Now lets create our own config. We will copy an existing config:
+
+$ (cd $SOLR_HOME/server/solr/configsets/sample_techproducts_configs/conf && zip -r - *) > myconfigset.zip
+
+* If you are on windows and the above command does not run you can use the pre-prepared myconfigset.zip
+that is in this exercises folder.
+
+Use the following command to upload the new configuration:
+
+$ curl -X POST --header "Content-Type:application/octet-stream" --data-binary @myconfigset.zip "http://localhost:8983/solr/admin/configs?action=UPLOAD&name=myConfigSet"

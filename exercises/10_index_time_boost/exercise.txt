@@ -1,0 +1,5 @@
+In this exercise we will do index time boosting to certain documents
+This means will boost certain fields at document insert time and see the effects
+this has on queries.
+
+First lets create a new core with new a new scheme with the attached create_ 
