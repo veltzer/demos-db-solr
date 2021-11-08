@@ -37,3 +37,32 @@ that is in this exercises folder.
 Use the following command to upload the new configuration:
 
 $ curl -X POST --header "Content-Type:application/octet-stream" --data-binary @myconfigset.zip "http://localhost:8983/solr/admin/configs?action=UPLOAD&name=myConfigSet"
+
+Lets see that the new configset is in with:
+
+$ curl -s "http://localhost:8983/api/cluster/configs?omitHeader=true"
+
+Lets create a config set from our set (copy a config set):
+
+$ curl -X POST -H 'Content-type: application/json' -d '{
+	"create":{
+		"name": "myConfigSetCopy",
+		"baseConfigSet": "myConfigSet"
+	}
+}' 'http://localhost:8983/api/cluster/configs?omitHeader=true'
+
+Lets see both of our config sets:
+
+$ curl -s "http://localhost:8983/api/cluster/configs?omitHeader=true"
+
+Lets delete one of the config sets we created:
+
+$ curl -s -X DELETE "http://localhost:8983/api/cluster/configs/myConfigSetCopy?omitHeader=true"
+
+Lets see that we are left with one configset:
+
+$ curl -s "http://localhost:8983/api/cluster/configs?omitHeader=true"
+
+References:
+- https://stackoverflow.com/questions/49181675/what-mode-is-solr-7-2-1-running-in
+- https://solr.apache.org/guide/8_10/configsets-api.html
