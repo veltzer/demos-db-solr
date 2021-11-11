@@ -32,3 +32,6 @@ curl -s -X DELETE "http://localhost:8983/api/cluster/configs/myConfigSetCopy?omi
 
 # list all configsets
 curl -s "http://localhost:8983/api/cluster/configs?omitHeader=true"
+
+# create a collection based on our configset
+$SOLR_HOME/bin/solr create_collection -c bar -d myconfigset

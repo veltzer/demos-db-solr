@@ -67,8 +67,9 @@ Lets see that we are left with one configset:
 $ curl -s "http://localhost:8983/api/cluster/configs?omitHeader=true"
 
 Lets create a new collection with the new configset:
-
-$ $SOLR_HOME/bin/solr create_collection -c foo -n myConfigSet
+	$ $SOLR_HOME/bin/solr create_collection -c foo -n myConfigSet
+or
+	$ $SOLR_HOME/bin/solr create_collection -c foo -d [folder with your configset]
 
 References:
 - https://stackoverflow.com/questions/49181675/what-mode-is-solr-7-2-1-running-in
