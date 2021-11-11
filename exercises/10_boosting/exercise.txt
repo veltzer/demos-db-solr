@@ -25,6 +25,9 @@ Lets import the provided films.xml file (it is in the solr examples):
 
 	$ $SOLR_HOME/bin/post -c films films.xml
 
+	Windows uses use this:
+	$ java -jar -Dc=films -Dauto $SOLR_HOME\example\exampledocs\post.jar films.xml 
+
 Query time boost
 
 Lets issue this query:
