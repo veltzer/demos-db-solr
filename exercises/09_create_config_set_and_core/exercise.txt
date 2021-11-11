@@ -1,4 +1,4 @@
-In this exercise we will create config set and a core/collection using it.
+In this exercise we will create config set and a collection using it.
 
 First make sure that Solr is running in cloud mode. In cloud mode you can query zookeeper properties
 like this:
@@ -14,11 +14,11 @@ To run solr in cloud mode use:
 
 $ $SOLR_HOME/bin/solr start -cloud
 
-First lets create a core from the command line:
+First lets create a collection from the command line:
 
 $ $SOLR_HOME/bin/solr create_collection -c foo
 
-Did you see the warning? This is because you are using the _default configuration for the core that comes
+Did you see the warning? This is because you are using the _default configuration for the collection that comes
 with the solr distribution.
 
 That configuration is really located at:
@@ -26,7 +26,7 @@ That configuration is really located at:
 
 Take a moment to explore this config
 
-Delete the core you created with:
+Delete the collection you created with:
 
 $ $SOLR_HOME/bin/solr delete -c foo
 
@@ -65,6 +65,10 @@ $ curl -s -X DELETE "http://localhost:8983/api/cluster/configs/myConfigSetCopy?o
 Lets see that we are left with one configset:
 
 $ curl -s "http://localhost:8983/api/cluster/configs?omitHeader=true"
+
+Lets create a new collection with the new configset:
+
+$ $SOLR_HOME/bin/solr create_collection -c foo
 
 References:
 - https://stackoverflow.com/questions/49181675/what-mode-is-solr-7-2-1-running-in
