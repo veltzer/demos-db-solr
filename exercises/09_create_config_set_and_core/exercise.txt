@@ -3,9 +3,12 @@ In this exercise we will create config set and a core/collection using it.
 First make sure that Solr is running in cloud mode. In cloud mode you can query zookeeper properties
 like this:
 
-$ curl "http://localhost:8983/solr/zookeeper?detail=true&path=%2Fclusterstate.json"
-
-So if this query fails you are not in cloud mode.
+This is the old command to check if zookeeper is running which indicates cloud mode:
+	$ curl "http://localhost:8983/solr/zookeeper?detail=true&path=%2Fclusterstate.json"
+	So if this query fails you are not in cloud mode.
+This is the new command:
+	$ curl -s "http://localhost:8983/solr/admin/info/system" | jq .mode
+	It should return "solrcloud"
 
 To run solr in cloud mode use:
 
@@ -13,7 +16,7 @@ $ $SOLR_HOME/bin/solr start -cloud
 
 First lets create a core from the command line:
 
-$ $SOLR_HOME/bin/solr create_core -c foo
+$ $SOLR_HOME/bin/solr create_collection -c foo
 
 Did you see the warning? This is because you are using the _default configuration for the core that comes
 with the solr distribution.
