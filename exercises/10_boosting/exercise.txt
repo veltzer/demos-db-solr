@@ -1,0 +1,46 @@
+In this exercise we will do query time boosting to certain documents
+This means that we will issue query that prefer certain documents to others
+
+First lets create a new core with new a new scheme:
+
+	$ $SOLR_HOME/bin/solr create -c films
+
+Lets create some fields:
+
+	$ curl http://localhost:8983/solr/films/schema -X POST -H 'Content-type:application/json' --data-binary '{
+	    "add-field" : {
+		"name":"name",
+		"type":"text_general",
+		"multiValued":false,
+		"stored":true
+	    },
+	    "add-field" : {
+		"name":"initial_release_date",
+		"type":"pdate",
+		"stored":true
+	    }
+	}'
+	$SOLR_HOME/bin/post -c films films.xml
+
+Lets import the provided films.xml file (it is in the solr examples):
+
+	$ $SOLR_HOME/bin/post -c films films.xml
+
+Query time boost
+
+Lets issue this query:
+	name: War or name: Ring
+
+And this one:
+	name: War^4 or name: Ring
+
+Did you notice the difference in the results?
+
+Try setting the "fl" box to:
+	name, score
+to actually see relevancy scores...
+
+References:
+- https://javadeveloperzone.com/solr/solr-index-time-boost/
+- http://www.solrtutorial.com/solr-search-relevancy.html
+- https://lucidworks.com/post/use-solr-boost-function/
