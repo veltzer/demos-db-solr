@@ -3,7 +3,7 @@ This means that we will issue query that prefer certain documents to others
 
 First lets create a new core with new a new scheme:
 
-	$ $SOLR_HOME/bin/solr create -c films
+	$ $SOLR_HOME/bin/solr create_core -c films
 
 Lets create some fields:
 
@@ -20,7 +20,6 @@ Lets create some fields:
 		"stored":true
 	    }
 	}'
-	$SOLR_HOME/bin/post -c films films.xml
 
 Lets import the provided films.xml file (it is in the solr examples):
 
