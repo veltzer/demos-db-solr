@@ -35,6 +35,7 @@ Lets issue this query:
 
 And this one:
 	name: War^4 or name: Ring
+	* This means multiply the score for movies with the word "War" in them by 4.
 
 Did you notice the difference in the results?
 
