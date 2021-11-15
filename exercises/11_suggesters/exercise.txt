@@ -1,0 +1,11 @@
+setup solr with the "techproducts" infor as specficied in the solr tutorial
+at this url:
+
+	https://solr.apache.org/guide/8_10/solr-tutorial.html
+
+Look as the config files you imported for the "techproducts" example:
+
+Review it's "searchComponent" element and it's "requestHandler" setup.
+
+Issue auto complete queries like:
+	$ curl "http://localhost:8983/solr/techproducts/suggest?suggest=true&suggest.build=true&suggest.dictionary=mySuggester&suggest.q=elec"
