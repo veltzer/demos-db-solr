@@ -1,0 +1,4 @@
+- indexing and retrieval
+- zookeeper.
+- solr cloud and scaling.
+- differences between 8.10 and 7.3 and 5.5.4

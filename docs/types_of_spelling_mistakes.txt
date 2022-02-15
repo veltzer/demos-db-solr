@@ -1,0 +1,44 @@
+
+
+
+		knight
+
+		adding a single letter: fknight knigght
+
+		dropping a letter: knigt knigh night
+
+		changing a letter: knijht kmight
+
+		94% of mistakes
+
+		fknight
+
+		knight fkight fknght ...
+
+
+		knight -> night, kight, knght, kniht, knigt, knigh
+		  |					|
+	          ---------------------------------------	
+
+		the brave night
+
+		brave night  brave knight
+
+
+
+		[word1] [word2] [work3]....    [wordn]
+		wen server	
+		
+		k1	k2	k3		kn
+
+		k1*k2*k3*...*kn
+
+		k1*k2 + k2*k3 + k3*k4 ....
+
+		4  4 4
+		n*4
+
+		the brave night fought the dragom
+
+		the brave night...
+		he  grave knight...
