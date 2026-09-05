@@ -13,5 +13,5 @@
 # this doesn't work because we are raising limits here and not lowering them
 export SOLR_ULIMIT_CHECKS=false
 
-cd ~/install/solr
+cd ~/install/solr || exit 1
 bin/solr start -e cloud -noprompt

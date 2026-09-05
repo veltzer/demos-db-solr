@@ -1,3 +1,3 @@
 #!/bin/sh
-cd ~/install/solr
+cd ~/install/solr || exit 1
 bin/solr status

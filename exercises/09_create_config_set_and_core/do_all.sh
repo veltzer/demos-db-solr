@@ -1,5 +1,5 @@
 #!/bin/bash -e
-SOLR_HOME="$HOME/install/solr"
+SOLR_HOME="${HOME}/install/solr"
 if curl -s -X DELETE "http://localhost:8983/api/cluster/configs/myConfigSet?omitHeader=true" > /dev/null
 then
 	echo "deleted myConfigSet"
@@ -15,7 +15,7 @@ fi
 # list all configsets
 curl -s "http://localhost:8983/api/cluster/configs?omitHeader=true"
 
-(cd $SOLR_HOME/server/solr/configsets/sample_techproducts_configs/conf && zip -qr - *) > myconfigset.zip
+(cd "${SOLR_HOME}"/server/solr/configsets/sample_techproducts_configs/conf && zip -qr - .) > myconfigset.zip
 
 curl -s -X POST --header "Content-Type:application/octet-stream" --data-binary @myconfigset.zip "http://localhost:8983/solr/admin/configs?action=UPLOAD&name=myConfigSet"
 curl -s -X POST -H 'Content-type: application/json' -d '{
@@ -34,4 +34,4 @@ curl -s -X DELETE "http://localhost:8983/api/cluster/configs/myConfigSetCopy?omi
 curl -s "http://localhost:8983/api/cluster/configs?omitHeader=true"
 
 # create a collection based on our configset
-$SOLR_HOME/bin/solr create_collection -c bar -d myconfigset
+"${SOLR_HOME}"/bin/solr create_collection -c bar -d myconfigset

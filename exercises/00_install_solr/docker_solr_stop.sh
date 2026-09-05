@@ -4,9 +4,9 @@ name="solr"
 
 if systemctl is-active --quiet "docker.service"
 then
-	if [[ $(docker ps --filter "name=^/$name$" --format '{{.Names}}') == "$name" ]]
+	if [[ $(docker ps --filter "name=^/${name}$" --format '{{.Names}}') == "${name}" ]]
 	then
-		echo "stopping [$name] container..."
+		echo "stopping [${name}] container..."
 		docker stop solr > /dev/null
 		docker rm solr > /dev/null
 	fi
