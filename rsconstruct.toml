@@ -23,5 +23,5 @@ src_dirs = ["exercises", "scripts"]
 
 # ─── xml / svg ───────────────────────────────────────────────────────────────
 
-[processor.checker.xmllint]
+[processor.checker.ixmllint]
 src_dirs = ["exercises/10_boosting"]
