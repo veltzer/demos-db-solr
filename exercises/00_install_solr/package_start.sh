@@ -5,7 +5,7 @@ ver="8.10.1"
 name="solr-${ver}"
 filename="${name}.tgz"
 # rm -rf "$name" "$filename"
-if [ ! -f "${filename}" ]
+if [[ ! -f "${filename}" ]]
 then
 	wget "https://dlcdn.apache.org/lucene/solr/${ver}/${filename}"
 	tar xvf "${name}.tgz"
