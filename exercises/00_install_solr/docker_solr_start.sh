@@ -22,7 +22,7 @@ SOLR_CONTAINER_ID=$(
 	docker\
 	run\
 	--detach=true\
-	--name=${name}\
+	--name="${name}"\
 	--network host\
 	solr:latest\
 )
